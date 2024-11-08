@@ -1,0 +1,6 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactUsPage>
+@{
+	Layout = "Layout.cshtml";
+	var content = Model.PageHeader?.First().Content;
+}
