@@ -1,6 +1,14 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactUsPage>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Pages>
 @{
-	Layout = "Layout.cshtml";
-	var content = Model.PageHeader?.First().Content;
+    Layout = "Layout.cshtml";
+
+    if (Model.PageHeader != null)
+    {
+        @await Html.PartialAsync("Partials/ComponentsBuilder", Model.PageHeader)
+    }
+
+    if (Model.MainContent != null)
+    {
+        @await Html.PartialAsync("Partials/ComponentsBuilder", Model.MainContent)
+    }
 }

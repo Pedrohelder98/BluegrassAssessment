@@ -1,8 +1,22 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HeroComponent>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HeroComponent>
 
 <div class="heroComponentContainer">
-    <div class="heroComponentTitle">
-        
-    </div>
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <div class="heroComponentTitle">
+            <h1>@Model.Title</h1>
+        </div>
+    }
+    @if(!string.IsNullOrEmpty(Model.Description))
+    {
+        <div class="heroComponentDescription">
+            <h4>@Model.Description</h4>
+        </div>
+    }
+    @if(Model.Image != null)
+    {
+        <div class="heroComponentImage">
+            <img src="@Model.Image.Url()" alt="@Model.Image.Name"/>
+        </div>
+    }
 </div>

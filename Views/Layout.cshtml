@@ -1,7 +1,7 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Pages>
 @{
     Layout = null;
+
 }
 <!DOCTYPE HTML>
 <html>
@@ -11,6 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 <body>
+    @await Html.PartialAsync("Partials/Header", Model.HeaderSettings)
+
     @RenderBody()
+
+    @await Html.PartialAsync("Partials/Footer", Model.FooterSettings)
 </body>
 </html>

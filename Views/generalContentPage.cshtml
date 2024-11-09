@@ -1,5 +1,14 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<GeneralContentPage>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Pages>
 @{
-	Layout = "Layout.cshtml";
+    Layout = "Layout.cshtml";
+
+    if (Model.PageHeader != null)
+    {
+        @await Html.PartialAsync("Partials/ComponentsBuilder", Model.PageHeader)
+    }
+
+    if (Model.MainContent != null)
+    {
+        @await Html.PartialAsync("Partials/ComponentsBuilder", Model.MainContent)
+    }
 }

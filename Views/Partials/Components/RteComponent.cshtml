@@ -1,2 +1,8 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<RteComponent>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<RteComponent>
+
+@if (!string.IsNullOrEmpty(Model.Content?.ToString()))
+{
+    <div class="rteComponentContainer">
+        @Model.Content
+    </div>
+}

@@ -1,2 +1,28 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HeroCtaComponent>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HeroCtaComponent>
+
+<div class="heroCtaComponentContainer">
+    @if (!string.IsNullOrEmpty(Model.Title))
+    {
+        <div class="heroCtaComponentTitle">
+            <h1>@Model.Title</h1>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <div class="heroCtaComponentDescription">
+            <h4>@Model.Description</h4>
+        </div>
+    }
+    @if (Model.Image != null)
+    {
+        <div class="heroCtaComponentImage">
+            <img src="@Model.Image.Url()" alt="@Model.Image.Name" />
+        </div>
+    }
+    @if(Model.Cta != null)
+    {
+        <div class="heroCtaComponentCta">
+            <a href="@Model.Cta.Url" target="@Model.Cta.Target">@Model.Cta.Name</a>
+        </div>
+    }
+</div>

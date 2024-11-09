@@ -1,2 +1,7 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ComponentsBuilder>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IEnumerable<Component>>
+@{
+    foreach (var component in Model)
+    {
+        @Html.Partial($"Partials/Components/{component.Alias}", component);
+    }
+}

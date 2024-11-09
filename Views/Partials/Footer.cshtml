@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<FooterSettings>
+<footer>
+    <p>&copy; @DateTime.Now.Year - BluegrassAssessment</p>
+
+    <div class="footerLinks">
+        @if (Model.FooterLinks != null)
+        {
+            foreach (var item in Model.FooterLinks)
+            {
+                <a href="@item.Url" target="@item.Target">@item.Name</a>
+            }
+        }
+    </div>
+
+    <div class="footerSocialMedia">
+        @if (Model.SocialMediaLinks != null)
+        {
+            foreach (var item in Model.SocialMediaLinks)
+            {
+                <a href="@item.Link.Url" target="@item.Link.Target">
+                    <svg><use href="#@item.Icon" /></svg>
+                    @item.Link.Name
+                </a>
+            }
+        }
+    </div>
+</footer>

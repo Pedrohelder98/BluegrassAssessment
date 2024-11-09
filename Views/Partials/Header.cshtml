@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IEnumerable<HeaderMenu>>
+<header>
+    <div class="navbar">
+        @foreach (var menuItem in Model)
+        {
+            <a href="@menuItem.HeaderLink.Url" target="@menuItem.HeaderLink.Target">@menuItem.HeaderLink.Name</a>
+            if (menuItem.HeaderSubMenu != null && menuItem.HeaderSubMenu.Any())
+            {
+                <div class="navbarSubmenu">
+                    @foreach (var subMenuItem in menuItem.HeaderSubMenu)
+                    {
+                        <a href="@subMenuItem.Url" target="@subMenuItem.Target">@subMenuItem.Name</a>
+                    }
+                </div>
+            }
+        }
+    </div>
+</header>
