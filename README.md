@@ -23,19 +23,19 @@ Services: Encapsulate data mapping and business logic to keep controllers clean 
 ### Clone the Repository:
 
 Clone the repository to your local machine using:
-'git clone https://github.com/Pedrohelder98/BluegrassAssessment.git'
+`git clone https://github.com/Pedrohelder98/BluegrassAssessment.git`
 
 Navigate to the Project Directory:
-'cd BluegrassAssessment'
+`cd BluegrassAssessment`
 
 Restore Dependencies:
-'dotnet restore'
+`dotnet restore`
 
 Build the Solution:
-'dotnet build'
+`dotnet build`
 
 Run the Application:
-'dotnet run'
+`dotnet run`
 
 Once running, the application should be accessible at https://localhost:44394.
 
@@ -43,10 +43,7 @@ Once running, the application should be accessible at https://localhost:44394.
 ## Configuration
 This project uses configuration files to manage different settings:
 
-appsettings.json: Contains general application configurations like logging, database connections.
-appsettings.Development.json: Includes development-specific configurations and overrides for local testing.
-
-Update these configuration files as necessary, especially if you are deploying to a production environment.
+`appsettings.json`: Contains general application configurations like logging, database connections.
 
 ## Usage
 
@@ -91,18 +88,23 @@ Handles routing and business logic for pages.
 ### Models (/Models) 
 Defines data models and structures.
 
- - Components: Contains reusable component models, such as HeroComponent, HeroCtaComponent, RteComponent and SocialMediaComponent.
+ - Components: Contains reusable component models.
  - Umbraco: Models related to Umbraco documentTypes, including page-specific models and header or footer settings for all the website pages.
 
 ### Views (/Views): Contains HTML views rendered on the client.
 
- - Layout.cshtml: Defines the base layout for all pages.
- - contactUsPage.cshtml, generalContentPage.cshtml: Define page-specific layouts.
+ - `Layout.cshtml`: Defines the base layout for all pages.
+ - `contactUsPage.cshtml` and `generalContentPage.cshtml`: Define page-specific layouts.
  - Partials: Contains reusable partial views, such as Header, Footer, and component views for modular design.
 
 ### Services (/Services): Includes logic for mapping and data handling.
 
- - MappingComponents.cs: Service for managing page and components mapping.
+ - `MappingComponents.cs`: Service for managing page and components mapping.
+ - `IMappingComponents.cs`: Interface to use `MappingComponents.cs` in controllers.
+
+### Composers (/Composers): Includes the composer to add Services to IUmbracoBuilder
+
+ - `UmbracoComposer.cs`: Composer that add the `IMappingComponents.cs` service to the IUmbracoBuilder.
 
 ### umbraco/Data 
 Stores the SQLite database used by Umbraco for data management.
