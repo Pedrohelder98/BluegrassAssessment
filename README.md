@@ -3,13 +3,6 @@
 BluegrassAssessment is a .NET-based web application developed with ASP.NET MVC and Umbraco CMS, designed to manage and present structured content.
 The application provides flexibility through modular components, making it easy to manage different types of pages, such as Contact Us and General Content pages.
 
-## Features
-
-Content Management with Umbraco: This project uses Umbraco CMS for content management, enabling dynamic, content-driven pages without hardcoding.
-MVC Architecture: Implements the Model-View-Controller pattern to separate business logic from user interface components.
-Reusable UI Components: Includes modular components like Hero sections, Social Media links, and rich text sections to standardize and simplify content creation.
-
-
 ## Project Structure
 
 Controllers: Define request handling and page routing for different content pages.
