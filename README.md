@@ -10,6 +10,11 @@ Models: Represent application data, like page-specific models and components.
 Views: Contain the HTML templates and partial views for rendering components.
 Services: Encapsulate data mapping and business logic to keep controllers clean and maintainable.
 
+## Technologies Used
+.NET 8: The core framework used for development.
+ASP.NET MVC: Provides a structured, scalable application architecture.
+Umbraco CMS: A CMS that allows for easy content management and integration.
+SQLite: A lightweight database used for data storage (found in umbraco/Data/Umbraco.sqlite.db).
 
 ## Setup Instructions
 
@@ -61,12 +66,6 @@ The Umbraco CMS is pre-configured with the following content structure:
  - Contact Us and General Content: Two pages with same structure: "Page Header" and "Main Content" properties, but have diferent templates.
 	- "Page Header": Block Grid data type that its possible to add "Hero" and "HeroCta" components.
 	- "Main Content": Block Grid data type that its possible to add "Rte" component.
-
-## Technologies Used
-.NET 8: The core framework used for development.
-ASP.NET MVC: Provides a structured, scalable application architecture.
-Umbraco CMS: A CMS that allows for easy content management and integration.
-SQLite: A lightweight database used for data storage (found in umbraco/Data/Umbraco.sqlite.db).
 
 ## Folder Structure
 
